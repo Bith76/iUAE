@@ -97,15 +97,15 @@ m68kcontext_t m68k_context;
 #pragma mark static CPU state
 // ------------------------
 // local statics
-register u16* PC asm("r4"); 
+u16* PC asm("r4"); 
 
 #ifndef FAMEARM_USE_VFP_REG_FOR_CYCLES
-register s32 cycles asm("r5"); 
+s32 cycles asm("r5"); 
 #endif
-register void** jt asm("r6");
-register u16 Opcode asm("r8");
-register unsigned int flags asm("r11");
-register m68kcontext_t *ctx asm("r10");
+void** jt asm("r6");
+u16 Opcode asm("r8");
+unsigned int flags asm("r11");
+m68kcontext_t *ctx asm("r10");
 
 s32 cycles_needed;
 
