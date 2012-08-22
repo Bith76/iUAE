@@ -16,8 +16,9 @@ build/*
 .DS_store
 profile
 
-# iAmiga specific
+# iUAE specific
 disks/*
+roms/*
 
 # vim
 *.swp

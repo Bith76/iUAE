@@ -84,7 +84,7 @@
 		0585D55F1091640900C1E4C1 /* VirtualKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0585D55E1091640900C1E4C1 /* VirtualKeyboard.m */; };
 		0585D5621091653E00C1E4C1 /* KeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0585D5611091653E00C1E4C1 /* KeyView.m */; };
 		059A411D12697B33003B23C7 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 059A411C12697B33003B23C7 /* MainWindow-iPad.xib */; };
-		059E3A2710636CBA0056A577 /* fame_arm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059E3A2410636CBA0056A577 /* fame_arm.cpp */; settings = {COMPILER_FLAGS = "-frename-registers -Wno-unused"; }; };
+		059E3A2710636CBA0056A577 /* fame_arm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059E3A2410636CBA0056A577 /* fame_arm.cpp */; settings = {COMPILER_FLAGS = "-frename-registers -Wno-unused -mno-thumb"; }; };
 		059E3A2810636CBA0056A577 /* m68k_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059E3A2610636CBA0056A577 /* m68k_interface.cpp */; };
 		05BC1AF51073448200EABC6E /* EMUBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BC1AED1073448200EABC6E /* EMUBrowser.m */; };
 		05BC1AF61073448200EABC6E /* EMUFileGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BC1AEF1073448200EABC6E /* EMUFileGroup.m */; };
@@ -142,7 +142,6 @@
 		050416310FCB566500F46828 /* ls-fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ls-fire.png"; sourceTree = "<group>"; };
 		050416320FCB566500F46828 /* ls-joystick_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ls-joystick_active.png"; sourceTree = "<group>"; };
 		050416330FCB566500F46828 /* ls-joystick_rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ls-joystick_rest.png"; sourceTree = "<group>"; };
-		05084E4913D7FE7B0004617A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		050B1742139C7A5D005C7736 /* SDL_joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL_joystick.h; sourceTree = "<group>"; };
 		050B1744139C7D1E005C7736 /* SDL_joystick.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL_joystick.c; sourceTree = "<group>"; };
 		050B1745139C7D1E005C7736 /* SDL_joystick_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL_joystick_c.h; sourceTree = "<group>"; };
@@ -1265,7 +1264,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				05084E4913D7FE7B0004617A /* libz.dylib */,
 				05E6A31C0FC3D93B0086151B /* AudioToolbox.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
