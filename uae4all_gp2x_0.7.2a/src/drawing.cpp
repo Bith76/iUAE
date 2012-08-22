@@ -99,7 +99,7 @@ static int dblpf_ind1[256], dblpf_ind2[256];
 
 static int dblpf_2nd1[256], dblpf_2nd2[256];
 
-static int dblpfofs[] = { 0, 2, 4, 8, 16, 32, 64, 128 };
+//static int dblpfofs[] = { 0, 2, 4, 8, 16, 32, 64, 128 };
 
 static int sprite_offs[256];
 
@@ -116,7 +116,7 @@ struct color_entry colors_for_drawing;
 /* The size of these arrays is pretty arbitrary; it was chosen to be "more
  than enough".  The coordinates used for indexing into these arrays are
  almost, but not quite, Amiga coordinates (there's a constant offset).  */
-union {
+union _pixdata {
     /* Let's try to align this thing. */
     double uupzuq;
     long int cruxmedo;
@@ -152,7 +152,7 @@ uae_u8 line_data[(MAXVPOS + 1) * 2][MAX_PLANES * MAX_WORDS_PER_LINE * 2] UAE4ALL
 static int min_diwstart, max_diwstop;
 static int thisframe_y_adjust;
 static int thisframe_y_adjust_real, max_ypos_thisframe, min_ypos_for_screen;
-static int extra_y_adjust;
+//static int extra_y_adjust;
 
 /* A frame counter that forces a redraw after at least one skipped frame in
  interlace mode.  */
@@ -543,14 +543,16 @@ static __inline__ void fill_line (void)
 	 */
 }
 
-/* H-A-M-
+/*
+// H-A-M-
 static unsigned int ham_lastcolor;
 
 static int ham_decode_pixel;
 
- Decode HAM in the invisible portion of the display (left of VISIBLE_LEFT_BORDER),
-   but don't draw anything in.  This is done to prepare HAM_LASTCOLOR for later,
-   when decode_ham runs.  
+// Decode HAM in the invisible portion of the display (left of VISIBLE_LEFT_BORDER),
+//   but don't draw anything in.  This is done to prepare HAM_LASTCOLOR for later,
+//   when decode_ham runs.
+
 static void init_ham_decoding (void)
 {
     int unpainted_amiga = res_shift_from_window (unpainted);
@@ -563,7 +565,7 @@ static void init_ham_decoding (void)
 			ham_lastcolor = colors_for_drawing.color_regs_ecs[pv];
 		}
     } else {
-	if (bplplanecnt == 6) { /* OCS/ECS mode HAM6 
+	if (bplplanecnt == 6) { // OCS/ECS mode HAM6 
 	    while (unpainted_amiga-- > 0) {
 		int pv = pixdata.apixels[ham_decode_pixel++];
 		switch (pv & 0x30) {
@@ -589,7 +591,7 @@ static void decode_ham (int pix, int stoppos)
 	    ham_linebuf[ham_decode_pixel++] = ham_lastcolor;
 	}
     } else {
-	if (bplplanecnt == 6) { /* OCS/ECS mode HAM6 
+	if (bplplanecnt == 6) { // OCS/ECS mode HAM6 
 	    while (todraw_amiga-- > 0) {
 		int pv = pixdata.apixels[ham_decode_pixel];
 		switch (pv & 0x30) {
@@ -603,7 +605,6 @@ static void decode_ham (int pix, int stoppos)
 	}
     }
 }
-
 */
 
 
@@ -758,7 +759,7 @@ static void draw_sprites_normal_sp_lo_nat(struct sprite_entry *_GCCRES_ e)
     uae_u16 *buf = spixels + e->first_pixel;
     uae_u8 *stbuf = spixstate.bytes + e->first_pixel;
     int pos, window_pos;
-    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
+//    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
 	
     buf -= e->pos;
     stbuf -= e->pos;
@@ -800,7 +801,7 @@ static void draw_sprites_normal_dp_lo_nat(struct sprite_entry *_GCCRES_ e)
     uae_u16 *buf = spixels + e->first_pixel;
     uae_u8 *stbuf = spixstate.bytes + e->first_pixel;
     int pos, window_pos;
-    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
+//    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
 	
     buf -= e->pos;
     stbuf -= e->pos;
@@ -846,7 +847,7 @@ static void draw_sprites_normal_sp_lo_at(struct sprite_entry *_GCCRES_ e)
     uae_u16 *buf = spixels + e->first_pixel;
     uae_u8 *stbuf = spixstate.bytes + e->first_pixel;
     int pos, window_pos;
-    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
+//    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
 	
     buf -= e->pos;
     stbuf -= e->pos;
@@ -896,7 +897,7 @@ static void draw_sprites_normal_dp_lo_at(struct sprite_entry *_GCCRES_ e)
     uae_u16 *buf = spixels + e->first_pixel;
     uae_u8 *stbuf = spixstate.bytes + e->first_pixel;
     int pos, window_pos;
-    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
+//    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
 	
     buf -= e->pos;
     stbuf -= e->pos;
@@ -946,7 +947,7 @@ static void draw_sprites_normal_sp_hi_nat(struct sprite_entry *_GCCRES_ e)
     uae_u16 *buf = spixels + e->first_pixel;
     uae_u8 *stbuf = spixstate.bytes + e->first_pixel;
     int pos, window_pos;
-    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
+//    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
 	
     buf -= e->pos;
     stbuf -= e->pos;
@@ -992,7 +993,7 @@ static void draw_sprites_normal_dp_hi_nat(struct sprite_entry *_GCCRES_ e)
     uae_u16 *buf = spixels + e->first_pixel;
     uae_u8 *stbuf = spixstate.bytes + e->first_pixel;
     int pos, window_pos;
-    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
+//    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
 	
     buf -= e->pos;
     stbuf -= e->pos;
@@ -1039,7 +1040,7 @@ static void draw_sprites_normal_sp_hi_at(struct sprite_entry *_GCCRES_ e)
     uae_u16 *buf = spixels + e->first_pixel;
     uae_u8 *stbuf = spixstate.bytes + e->first_pixel;
     int pos, window_pos;
-    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
+//    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
 	
     buf -= e->pos;
     stbuf -= e->pos;
@@ -1090,7 +1091,7 @@ static void draw_sprites_normal_dp_hi_at(struct sprite_entry *_GCCRES_ e)
     uae_u16 *buf = spixels + e->first_pixel;
     uae_u8 *stbuf = spixstate.bytes + e->first_pixel;
     int pos, window_pos;
-    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
+//    uae_u8 xor_val = (uae_u8)(dp_for_drawing->bplcon4 >> 8);
 	
     buf -= e->pos;
     stbuf -= e->pos;
@@ -2038,9 +2039,10 @@ static _INLINE_ void write_tdletter (int x, int y, char ch)
 
 static _INLINE_ void draw_status_line (int line)
 {
-    int x, y, i, j, led, on;
+//    int x, y, i, j, led, on;
+    int x, y, j, led, on;
     int on_rgb, off_rgb, c;
-    uae_u8 *buf;
+//    uae_u8 *buf;
     
     if (td_pos & TD_RIGHT)
         x = GFXVIDINFO_WIDTH - TD_PADX - 5*TD_WIDTH;

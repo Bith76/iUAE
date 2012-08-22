@@ -48,7 +48,7 @@ uae_u32 allocated_a3000mem;
 
 static long chip_filepos;
 static long bogo_filepos;
-static long rom_filepos;
+//static long rom_filepos;
 
 addrbank *mem_banks[65536];
 
@@ -89,7 +89,7 @@ static __inline__ void byteput (uaecptr addr, uae_u32 b)
 
 uae_u32 chipmem_mask, kickmem_mask, extendedkickmem_mask, bogomem_mask, a3000mem_mask;
 
-static int illegal_count;
+//static int illegal_count;
 /* A dummy bank that only contains zeros */
 
 static uae_u32 dummy_lget (uaecptr) REGPARAM;
@@ -1284,7 +1284,7 @@ void map_banks (addrbank *bank, int start, int size, int realsize)
 {
     int bnr;
     unsigned long int hioffs = 0, endhioffs = 0x100;
-    addrbank *orgbank = bank;
+//    addrbank *orgbank = bank;
     uae_u32 realstart = start;
 	
 #ifdef DEBUG_MEMORY

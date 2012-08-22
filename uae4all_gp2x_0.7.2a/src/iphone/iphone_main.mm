@@ -25,7 +25,7 @@ int drawfinished=0;
 extern int vkbd_mode;
 
 int gui_init() {
-	vkbd_mode = 0;
+	vkbd_mode = 1;
 	
 #ifdef PROFILER_UAE4ALL
 	uae4all_prof_init();

@@ -132,6 +132,12 @@ CGFloat kDefaultRotateDuration		= 50.0 / 1000.0;
 		case DPadUpLeft:
 			transform = CGAffineTransformConcat(transform, CGAffineTransformMakeRotation(degreesToRadian(315)));
 			break;
+		case DPadCenter:
+			//transform = CGAffineTransformConcat(transform, CGAffineTransformMakeRotation(degreesToRadian(315)));
+			break;
+		case DPadUp:
+			//transform = CGAffineTransformConcat(transform, CGAffineTransformMakeRotation(degreesToRadian(315)));
+			break;
 	}
 	
 	if (animate) {

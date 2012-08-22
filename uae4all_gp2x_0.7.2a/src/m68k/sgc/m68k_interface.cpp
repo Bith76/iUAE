@@ -103,8 +103,8 @@ static int m68k_exception(m68kcontext_t *cpu, unsigned n)
 
 int uae_chk_handler(register m68kcontext_t *cpu, unsigned vector) {
 	// handling invalid opcode
-	u32 pc = cpu->pc - cpu->membase;
-	unsigned opcode=cpu->fetch16(pc);
+//	u32 pc = cpu->pc - cpu->membase;
+//	unsigned opcode=cpu->fetch16(pc);
 	
 	return m68k_exception(cpu, 0x04);
 }

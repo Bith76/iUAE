@@ -67,7 +67,8 @@
 	while (len--) {
 		*dst-- = *src++;
 	}
-	return [NSString stringWithCString:buf length:[self length]];
+	//return [NSString stringWithCString:buf length:[self length]];
+	return [NSString stringWithCString:buf encoding:[NSString defaultCStringEncoding]];
 }
 
 @end

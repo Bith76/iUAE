@@ -94,8 +94,8 @@ static __inline__ void setnasty(void)
 
 static uae_u16 last_custom_value;
 
-static unsigned int n_consecutive_skipped = 0;
-static unsigned int total_skipped = 0;
+//static unsigned int n_consecutive_skipped = 0;
+//static unsigned int total_skipped = 0;
 
 /* Mouse and joystick emulation */
 
@@ -167,7 +167,7 @@ static unsigned int sprpos[MAX_SPRITES] UAE4ALL_ALIGN;
 static unsigned int sprctl[MAX_SPRITES] UAE4ALL_ALIGN;
 static uae_u16 sprdata[MAX_SPRITES][4] UAE4ALL_ALIGN;
 static uae_u16 sprdatb[MAX_SPRITES][4] UAE4ALL_ALIGN;
-static int sprite_last_drawn_at[MAX_SPRITES] UAE4ALL_ALIGN;
+//static int sprite_last_drawn_at[MAX_SPRITES] UAE4ALL_ALIGN;
 
 static int last_sprite_point, nr_armed;
 static int sprite_width, sprres, sprite_buffer_res;
@@ -206,8 +206,8 @@ int diwfirstword, diwlastword;
 static enum diw_states diwstate, hdiwstate;
 
 /* Sprite collisions */
-static unsigned int clxdat, clxcon, clxcon2, clxcon_bpl_enable, clxcon_bpl_match;
-static int clx_sprmask;
+//static unsigned int clxdat, clxcon, clxcon2, clxcon_bpl_enable, clxcon_bpl_match;
+static unsigned int clxdat, clxcon, clxcon_bpl_enable, clxcon_bpl_match;static int clx_sprmask;
 
 enum copper_states {
     COP_stop,
@@ -264,7 +264,7 @@ static unsigned int regtypes[512];
 
 static struct copper cop_state;
 static int copper_enabled_thisline;
-static int cop_min_waittime;
+//static int cop_min_waittime;
 
 /*
  * Statistics
@@ -281,7 +281,7 @@ struct cop_record
   uaecptr addr;
 } UAE4ALL_ALIGN;
 
-static struct cop_record cop_record[2][NR_COPPER_RECORDS];
+//static struct cop_record cop_record[2][NR_COPPER_RECORDS];
 static int nr_cop_records[2];
 static int curr_cop_set;
 
@@ -574,7 +574,8 @@ static uae_u32 todisplay[MAX_PLANES] UAE4ALL_ALIGN;
 static uae_u32 fetched[MAX_PLANES] UAE4ALL_ALIGN;
 
 /* Expansions from bplcon0/bplcon1.  */
-static int toscr_res, toscr_res2, toscr_res15, toscr_delay[2], toscr_nr_planes, fetchwidth;
+//static int toscr_res, toscr_res2, toscr_res15, toscr_delay[2], toscr_nr_planes, fetchwidth;
+static int toscr_res, toscr_res2, toscr_res15, toscr_delay[2], toscr_nr_planes;
 
 /* The number of bits left from the last fetched words.  
  This is an optimization - conceptually, we have to make sure the result is
@@ -1262,7 +1263,7 @@ static _INLINE_ void record_sprite (int line, int num, int sprxp, uae_u16 *_GCCR
 	
     if (ctl & (num << 7) & 0x80) {
 		uae_u32 state = 0x01010101 << (num - 1);
-		uae_u32 *stbuf = spixstate.words + (word_offs >> 2);
+//		uae_u32 *stbuf = spixstate.words + (word_offs >> 2);
 		uae_u8 *stb1 = spixstate.bytes + word_offs;	
 		for (i = 0; i < width; i += 8) {
 			stb1[0] |= state;
@@ -1808,7 +1809,7 @@ static __inline__ void COPCON (uae_u16 a)
 
 static _INLINE_ void DMACON (int hpos, uae_u16 v)
 {
-    int i;
+//    int i;
 	
     uae_u16 oldcon = dmacon;
 	
@@ -2733,7 +2734,7 @@ done:
 
 static _INLINE_ void perform_copper_write (int old_hpos)
 {
-    int vp = vpos & (((cop_state.saved_i2 >> 8) & 0x7F) | 0x80);
+//    int vp = vpos & (((cop_state.saved_i2 >> 8) & 0x7F) | 0x80);
     unsigned int address = cop_state.saved_i1 & 0x1FE;
 	
     if (address < (copcon & 2 ? (0x40u) : 0x80u)) {
@@ -3442,7 +3443,7 @@ void init_eventtab (void)
 void customreset (void)
 {
     int i;
-    int zero = 0;
+//    int zero = 0;
 	for (i = 0; i < 32; i++) {
 		current_colors.color_uae_regs_ecs[i] = 0;
 		current_colors.acolors[i] = xcolors[0];
@@ -3555,7 +3556,7 @@ static _INLINE_ void gen_custom_tables (void)
 {
     int i;
     for (i = 0; i < 256; i++) {
-		unsigned int j;
+//		unsigned int j;
 		sprtaba[i] = ((((i >> 7) & 1) << 0)
 					  | (((i >> 6) & 1) << 2)
 					  | (((i >> 5) & 1) << 4)
@@ -3584,7 +3585,7 @@ static _INLINE_ void gen_custom_tables (void)
 
 void custom_init (void)
 {
-    uaecptr pos;
+//    uaecptr pos;
 	
     int num;
 	

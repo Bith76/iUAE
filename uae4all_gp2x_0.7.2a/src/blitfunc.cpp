@@ -805,7 +805,7 @@ void blitdofast_aa (uaecptr pta, uaecptr ptb, uaecptr ptc, uaecptr ptd, struct b
 	uae_u32 dstd=0;
 	for (j = b->vblitsize; j--;) {
 		for (i = b->hblitsize; i--;) {
-			uae_u32 bltadat, srca;
+//			uae_u32 bltadat, srca;
 			
 			if (ptc) { srcc = CHIPMEM_WGET (ptc); ptc += 2; }
 			dstd = (srcc);
@@ -826,7 +826,7 @@ void blitdofast_desc_aa (uaecptr pta, uaecptr ptb, uaecptr ptc, uaecptr ptd, str
 	uae_u32 dstd=0;
 	for (j = b->vblitsize; j--;) {
 		for (i = b->hblitsize; i--;) {
-			uae_u32 bltadat, srca;
+//			uae_u32 bltadat, srca;
 			if (ptc) { srcc = CHIPMEM_WGET (ptc); ptc -= 2; }
 			dstd = (srcc);
 			totald |= dstd;
@@ -988,7 +988,7 @@ void blitdofast_cc (uaecptr pta, uaecptr ptb, uaecptr ptc, uaecptr ptd, struct b
 	uae_u32 dstd=0;
 	for (j = b->vblitsize; j--;) {
 		for (i = b->hblitsize; i--;) {
-			uae_u32 bltadat, srca;
+//			uae_u32 bltadat, srca;
 			
 			if (ptb) {
 				uae_u32 bltbdat = CHIPMEM_WGET (ptb); ptb += 2;
@@ -1013,7 +1013,7 @@ void blitdofast_desc_cc (uaecptr pta, uaecptr ptb, uaecptr ptc, uaecptr ptd, str
 	uae_u32 dstd=0;
 	for (j = b->vblitsize; j--;) {
 		for (i = b->hblitsize; i--;) {
-			uae_u32 bltadat, srca;
+//			uae_u32 bltadat, srca;
 			if (ptb) {
 				uae_u32 bltbdat = CHIPMEM_WGET (ptb); ptb -= 2;
 				srcb = ((bltbdat << 16) | prevb) >> b->blitdownbshift;

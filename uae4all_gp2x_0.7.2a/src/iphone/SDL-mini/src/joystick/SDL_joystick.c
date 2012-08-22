@@ -135,11 +135,15 @@ SDL_JoystickOpen(int device_index)
     
     /* Add joystick to list */
     ++joystick->ref_count;
+    #if !SDL_EVENTS_DISABLED
     SDL_Lock_EventThread();
+    #endif
     for (i = 0; SDL_joysticks[i]; ++i)
     /* Skip to next joystick */ ;
     SDL_joysticks[i] = joystick;
+    #if !SDL_EVENTS_DISABLED
     SDL_Unlock_EventThread();
+    #endif
     
     return (joystick);
 }
@@ -301,9 +305,10 @@ SDL_JoystickClose(SDL_Joystick * joystick)
         return;
     }
     
+#if !SDL_EVENTS_DISABLED
     /* Lock the event queue - prevent joystick polling */
     SDL_Lock_EventThread();
-    
+#endif    
     if (joystick == default_joystick) {
         default_joystick = NULL;
     }
@@ -317,10 +322,10 @@ SDL_JoystickClose(SDL_Joystick * joystick)
             break;
         }
     }
-    
+#if !SDL_EVENTS_DISABLED    
     /* Let the event thread keep running */
     SDL_Unlock_EventThread();
-    
+#endif    
     /* Free the data associated with this joystick */
     if (joystick->axes) {
         SDL_free(joystick->axes);
@@ -338,10 +343,14 @@ SDL_JoystickClose(SDL_Joystick * joystick)
 }
 
 void SDL_JoystickQuit(void) {
+#if !SDL_EVENTS_DISABLED
     /* Stop the event polling */
     SDL_Lock_EventThread();
+#endif
     SDL_numjoysticks = 0;
+#if !SDL_EVENTS_DISABLED
     SDL_Unlock_EventThread();
+#endif
     
     /* Quit the joystick setup */
     SDL_SYS_JoystickQuit();

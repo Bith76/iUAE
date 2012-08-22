@@ -414,7 +414,7 @@ static void read_floppy_data (drive * drv, int track, int offset, unsigned char 
 #ifdef DEBUG_DISK
     dbgf("disc.c : read_floppy_data track %i len %i\n",track,len);
 #endif
-    unsigned i;
+//    unsigned i;
     trackid *ti;
 	
     ti = &drv->trackdata[track];

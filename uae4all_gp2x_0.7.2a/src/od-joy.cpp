@@ -36,6 +36,9 @@ void read_joystick(int nr, unsigned int *dir, int *button)
     nr = (~nr)&0x1;
 	
     switch (g_touchStick.dPadState()) {
+		case DPadCenter:
+			left = 0, right = 0, top = 0, bot = 0;
+			break;
 		case DPadUp:
 			top = 1;
 			break;

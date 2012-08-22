@@ -116,7 +116,11 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		CF80C12615E1165A0041D4FA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 05084E4913D7FE7B0004617A /* libz.dylib */; };
+		CF80C15315E3AA360041D4FA /* Defender OTC1.ADF in Resources */ = {isa = PBXBuildFile; fileRef = CF80C14E15E3AA360041D4FA /* Defender OTC1.ADF */; };
+		CF80C15415E3AA360041D4FA /* Defender OTC2.ADF in Resources */ = {isa = PBXBuildFile; fileRef = CF80C14F15E3AA360041D4FA /* Defender OTC2.ADF */; };
+		CF80C15515E3AA360041D4FA /* deusave.adf in Resources */ = {isa = PBXBuildFile; fileRef = CF80C15015E3AA360041D4FA /* deusave.adf */; };
+		CF80C15615E3AA360041D4FA /* Deuteros 1.ADF in Resources */ = {isa = PBXBuildFile; fileRef = CF80C15115E3AA360041D4FA /* Deuteros 1.ADF */; };
+		CF80C15715E3AA360041D4FA /* Deuteros 2.ADF in Resources */ = {isa = PBXBuildFile; fileRef = CF80C15215E3AA360041D4FA /* Deuteros 2.ADF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -408,6 +412,12 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* iUAE_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iUAE_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF80C14E15E3AA360041D4FA /* Defender OTC1.ADF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Defender OTC1.ADF"; sourceTree = "<group>"; };
+		CF80C14F15E3AA360041D4FA /* Defender OTC2.ADF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Defender OTC2.ADF"; sourceTree = "<group>"; };
+		CF80C15015E3AA360041D4FA /* deusave.adf */ = {isa = PBXFileReference; lastKnownFileType = file; path = deusave.adf; sourceTree = "<group>"; };
+		CF80C15115E3AA360041D4FA /* Deuteros 1.ADF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Deuteros 1.ADF"; sourceTree = "<group>"; };
+		CF80C15215E3AA360041D4FA /* Deuteros 2.ADF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Deuteros 2.ADF"; sourceTree = "<group>"; };
+		CFA6CF3015E3C6A700BF6E7D /* iUAE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iUAE.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,7 +425,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF80C12615E1165A0041D4FA /* libz.dylib in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -1055,6 +1064,11 @@
 		05BC17D81070B74E00EABC6E /* d */ = {
 			isa = PBXGroup;
 			children = (
+				CF80C14E15E3AA360041D4FA /* Defender OTC1.ADF */,
+				CF80C14F15E3AA360041D4FA /* Defender OTC2.ADF */,
+				CF80C15015E3AA360041D4FA /* deusave.adf */,
+				CF80C15115E3AA360041D4FA /* Deuteros 1.ADF */,
+				CF80C15215E3AA360041D4FA /* Deuteros 2.ADF */,
 			);
 			path = d;
 			sourceTree = "<group>";
@@ -1211,6 +1225,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				CFA6CF3015E3C6A700BF6E7D /* iUAE.entitlements */,
 				053D8B2E13B1B2C30002802F /* TargetSpecific */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -1287,6 +1302,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iUAE" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -1343,6 +1361,11 @@
 				05619EDC13ADE1AA00341DB0 /* SelectHardware.xib in Resources */,
 				058063D013B06DD800E00B04 /* Icon-72.png in Resources */,
 				05789FB913B1436200A72F5F /* Entitlements.plist in Resources */,
+				CF80C15315E3AA360041D4FA /* Defender OTC1.ADF in Resources */,
+				CF80C15415E3AA360041D4FA /* Defender OTC2.ADF in Resources */,
+				CF80C15515E3AA360041D4FA /* deusave.adf in Resources */,
+				CF80C15615E3AA360041D4FA /* Deuteros 1.ADF in Resources */,
+				CF80C15715E3AA360041D4FA /* Deuteros 2.ADF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1481,7 +1504,7 @@
 				GCC_THREADSAFE_STATICS = NO;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_UNROLL_LOOPS = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
@@ -1493,7 +1516,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
-				PREBINDING = NO;
+				OTHER_LDFLAGS = "-lz";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1519,7 +1542,7 @@
 				GCC_THREADSAFE_STATICS = NO;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_UNROLL_LOOPS = YES;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -1540,7 +1563,7 @@
 					"-falign-labels",
 					"-falign-jumps",
 				);
-				PREBINDING = NO;
+				OTHER_LDFLAGS = "-lz";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;

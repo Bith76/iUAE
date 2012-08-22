@@ -45,6 +45,6 @@
 
 @property (nonatomic, assign)		id<InputControllerChangedDelegate>	delegate;
 
-- (void)setStick;
+//- (void)setStick;
 
 @end

@@ -130,7 +130,7 @@ const int kButtonWidthLandscape			= 200;
 }
 
 - (void)layoutSubviews {
-	CGPoint origin = self.frame.origin;
+//	CGPoint origin = self.frame.origin;
 	CGSize size = self.frame.size;
 	UIInterfaceOrientation current = (UIInterfaceOrientation)[[UIDevice currentDevice] orientation];
 	if (UIInterfaceOrientationIsLandscape(current)) {

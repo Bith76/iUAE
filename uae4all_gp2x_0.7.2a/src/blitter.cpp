@@ -51,7 +51,7 @@ static uae_u16 blitlpos, blinea, blineb;
 static uaecptr bltcnxlpt,bltdnxlpt;
 static int blitline,blitfc,blitfill,blitife,blitdesc,blitsing;
 static int blitonedot,blitsign;
-static long int bltwait;
+//static long int bltwait;
 
 struct bltinfo blt_info;
 

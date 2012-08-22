@@ -198,8 +198,8 @@ static CGRect CreateIntegralScaledView(CGRect aFrame, BOOL top) {
 	
 	if (_integralSize) {
 		CGRect aFrame;
-		CGFloat scale;
-		CGFloat frameWidth;
+//		CGFloat scale;
+//		CGFloat frameWidth;
 		if (UIInterfaceOrientationIsLandscape(layoutOrientation)) {
 			aFrame = CGRectMake(0, 0, frameSize.width, frameSize.height);
 			// width is larger than height

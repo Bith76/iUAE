@@ -363,7 +363,7 @@ static audio_handler_func audio3_table[8] UAE4ALL_ALIGN = {
 static __inline__ void audio_handler (int nr)
 {
     struct audio_channel_data *cdp = audio_channel + nr;
-	int evtime = audio_channel_evtime[nr];
+//	int evtime = audio_channel_evtime[nr];
 	audio_channel_evtime[nr] = MAX_EV;
 	
     switch (audio_channel_state[nr]) {

@@ -91,7 +91,7 @@ void uae::default_prefs () {
 	// 1 = 75%
 	// 2 = 50%
 	// 3 = 25%
-	timeslice_mode = 2;
+	timeslice_mode = 0;
 	
 	// 0 = 100%
 	// 2 = 83%

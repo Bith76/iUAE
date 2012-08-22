@@ -133,7 +133,8 @@
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID];
 	if (cell == nil)
-		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CELL_ID] autorelease];
+//		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CELL_ID] autorelease];
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_ID] autorelease];
 	
     cell.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame)

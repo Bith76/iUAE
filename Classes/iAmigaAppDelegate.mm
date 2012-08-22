@@ -25,7 +25,7 @@
 
 @synthesize window, mainController=_mainController;
 
-static UaeDebugger *debugger;
+//static UaeDebugger *debugger;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	//_emulationView = [EmulationViewController new];

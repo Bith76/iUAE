@@ -365,7 +365,7 @@ static void graphics_subinit (void)
 
 int graphics_init (void)
 {
-	int i,j;
+	int i;
 #if defined (GP2X) || defined (PSP) || defined (GIZMONDO)
 	// this will hold the state of the mouse emulation toggle.  The start button
 	// will enable mouse emulation, which will allow the joystick to move the 
@@ -558,8 +558,8 @@ void handle_events (void)
 {
     SDL_Event rEvent;
     int iAmigaKeyCode;
-    int i, j;
-    int iIsHotKey = 0;
+//    int i, j;
+//    int iIsHotKey = 0;
 #ifdef DEBUG_EVENTS
     dbg("Function: handle_events");
 #endif
